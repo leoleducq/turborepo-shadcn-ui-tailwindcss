@@ -4,11 +4,14 @@ import { Button } from "@repo/ui/components/ui/button";
 import Link from "next/link";
 import { projects } from "../projects";
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: { project_slug: string };
-}) {
+interface PageProps {
+  params: Promise<{
+    project_slug: string;
+  }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function ProjectPage({ params }: PageProps) {
   const { project_slug } = await params;
   const project = projects.find((p) => p.slug === project_slug);
 
