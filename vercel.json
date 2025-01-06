@@ -1,5 +1,5 @@
 {
   "buildCommand": "turbo run build",
   "installCommand": "pnpm install",
-  "outputDirectory": "apps/docs/.next"
+  "outputDirectory": "apps/docs/.next/static"
 }
