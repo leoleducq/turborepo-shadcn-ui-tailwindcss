@@ -2,6 +2,7 @@ type Project = {
   id: number;
   slug: string;
   title: string;
+  subtitle: string;
   date: string;
   image: string;
   description: string;
@@ -12,6 +13,7 @@ export const projects: Project[] = [
     id: 1,
     slug: "identite-visuelle",
     title: "Identité visuelle Théatre Saint Gervais",
+    subtitle: "Théâtre Saint Gervais",
     date: "2023-12-01",
     image: "/identite-visuelle.png",
     description:
@@ -21,6 +23,7 @@ export const projects: Project[] = [
     id: 2,
     slug: "design-editorial",
     title: "Design éditorial",
+    subtitle: "Clemence",
     date: "2023-11-15",
     image: "/clemence.png",
     description:
@@ -30,6 +33,7 @@ export const projects: Project[] = [
     id: 3,
     slug: "overshoot",
     title: "Overshoot",
+    subtitle: "L'Over Shoot",
     date: "2023-10-20",
     image: "/overshoot.png",
     description:
@@ -39,6 +43,7 @@ export const projects: Project[] = [
     id: 4,
     slug: "3d",
     title: "3D",
+    subtitle: "L'Over Shoot",
     date: "2023-09-05",
     image: "/3d.png",
     description:
@@ -48,6 +53,7 @@ export const projects: Project[] = [
     id: 5,
     slug: "manufacture",
     title: "Affiche Manufacture",
+    subtitle: "Manufacture",
     date: "2023-08-12",
     image: "/manufacture.png",
     description:
@@ -57,6 +63,7 @@ export const projects: Project[] = [
     id: 6,
     slug: "typographie",
     title: "Typographie",
+    subtitle: "L'Over Shoot",
     date: "2023-07-22",
     image: "/typographie.jpg",
     description:
@@ -66,6 +73,7 @@ export const projects: Project[] = [
     id: 7,
     slug: "edition",
     title: "Édition",
+    subtitle: "L'Over Shoot",
     date: "2023-07-22",
     image: "/edition.jpg",
     description:
@@ -75,6 +83,7 @@ export const projects: Project[] = [
     id: 8,
     slug: "web",
     title: "Site Web",
+    subtitle: "L'Over Shoot",
     date: "2023-07-22",
     image: "/web.jpg",
     description:
@@ -84,6 +93,7 @@ export const projects: Project[] = [
     id: 9,
     slug: "workshop",
     title: "Workshop",
+    subtitle: "L'Over Shoot",
     date: "2023-07-22",
     image: "/workshop.jpg",
     description:
