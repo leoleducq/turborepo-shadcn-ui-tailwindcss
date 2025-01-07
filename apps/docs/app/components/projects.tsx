@@ -14,7 +14,6 @@ const sortedProjects = projects.sort(
 export default function Projects() {
   return (
     <section id="projets" className="container py-12">
-      <h2 className="text-3xl font-bold mb-8">Mes Projets</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
         {sortedProjects.map((project) => (
           <Link href={`/${project.slug}`} key={project.id}>
@@ -30,6 +29,9 @@ export default function Projects() {
                   />
                   <div className="p-4">
                     <h3 className="text-lg font-semibold">{project.title}</h3>
+                    <h4 className="text-sm text-muted-foreground">
+                      {project.subtitle}
+                    </h4>
                     <p className="text-sm text-muted-foreground">
                       {new Date(project.date).toLocaleDateString()}
                     </p>
