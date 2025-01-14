@@ -32,9 +32,6 @@ export default function Projects() {
                     <h4 className="text-sm text-muted-foreground">
                       {project.subtitle}
                     </h4>
-                    <p className="text-sm text-muted-foreground">
-                      {new Date(project.date).toLocaleDateString()}
-                    </p>
                   </div>
                 </CardContent>
               </Card>

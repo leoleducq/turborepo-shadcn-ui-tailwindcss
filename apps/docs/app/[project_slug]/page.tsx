@@ -34,9 +34,6 @@ export default async function ProjectPage({ params }: PageProps) {
         />
         <h1 className="text-3xl font-bold mb-2">{project.title}</h1>
         <h2 className="text-muted-foreground mb-4">{project.subtitle}</h2>
-        <p className="text-muted-foreground mb-4">
-          {new Date(project.date).toLocaleDateString()}
-        </p>
         <p className="text-lg leading-relaxed">{project.description}</p>
       </article>
     </div>
