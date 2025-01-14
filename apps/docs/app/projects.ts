@@ -93,7 +93,7 @@ export const projects: Project[] = [
     id: 9,
     slug: "workshop",
     title: "Workshop",
-    subtitle: "L'Over Shoot",
+    subtitle: "Archives",
     date: "2023-07-22",
     image: "/workshop.jpg",
     description:
