@@ -63,7 +63,7 @@ export const projects: Project[] = [
     id: 6,
     slug: "typographie",
     title: "Typographie",
-    subtitle: "L'Over Shoot",
+    subtitle: "Specimen",
     date: "2023-07-22",
     image: "/typographie.jpg",
     description:
@@ -72,7 +72,7 @@ export const projects: Project[] = [
   {
     id: 7,
     slug: "edition",
-    title: "Édition",
+    title: "Éditorial",
     subtitle: "L'Over Shoot",
     date: "2023-07-22",
     image: "/edition.jpg",
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     id: 8,
     slug: "web",
     title: "Site Web",
-    subtitle: "L'Over Shoot",
+    subtitle: "Web Design",
     date: "2023-07-22",
     image: "/web.jpg",
     description:
