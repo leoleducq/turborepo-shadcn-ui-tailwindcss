@@ -3,9 +3,12 @@ const nextConfig = {
   transpilePackages: ["ui"],
   outputFileTracingExcludes: {
     "*": [
-      "public/**/*.mp4",
-      "public/**/*.mov", 
-      "public/**/*.avi",
+      "public/projet*/**",
+      "public/*.jpg",
+      "public/*.png", 
+      "public/*.mp4",
+      "public/*.mov", 
+      "public/*.avi",
       "node_modules/@swc/core-linux-x64-gnu",
       "node_modules/@swc/core-linux-x64-musl",
       "node_modules/@esbuild/**",
