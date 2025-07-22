@@ -6,6 +6,8 @@ type Project = {
   date: string;
   image: string;
   description: string;
+  images: string[];
+  tableData: string[];
 };
 
 export const projects: Project[] = [
@@ -18,6 +20,18 @@ export const projects: Project[] = [
     image: "/identite-visuelle.png",
     description:
       "Développement complet de l'identité visuelle pour le Théâtre Saint Gervais. Ce projet a impliqué la création d'une charte graphique cohérente, incluant logo, typographie, palette de couleurs et supports de communication, reflétant l'essence culturelle et artistique du théâtre.",
+    images: [
+      "/identite-visuelle.png",
+      "/identite-visuelle-2.png",
+      "/identite-visuelle-3.png",
+    ],
+    tableData: [
+      "Identité visuelle",
+      "2023",
+      "Théâtre Saint Gervais",
+      "",
+      "Logo, charte, supports",
+    ],
   },
   {
     id: 2,
@@ -28,6 +42,8 @@ export const projects: Project[] = [
     image: "/clemence.png",
     description:
       "Conception et réalisation d'un projet éditorial mettant en valeur un contenu complexe à travers une mise en page innovante. Le design privilégie la lisibilité tout en maintenant une esthétique contemporaine et engageante.",
+    images: ["/clemence.png"],
+    tableData: ["Design éditorial", "2023", "Imbert", "", ""],
   },
   {
     id: 3,
@@ -38,6 +54,8 @@ export const projects: Project[] = [
     image: "/overshoot.png",
     description:
       "Projet créatif explorant le concept d'overshoot à travers une approche visuelle unique. Cette réalisation combine illustrations et éléments graphiques pour sensibiliser aux enjeux environnementaux actuels.",
+    images: ["/overshoot.png"],
+    tableData: ["Overshoot", "2023", "", "Environnement", "Illustration"],
   },
   {
     id: 4,
@@ -48,6 +66,8 @@ export const projects: Project[] = [
     image: "/3d.png",
     description:
       "Création d'univers visuels en trois dimensions, explorant les possibilités créatives de la modélisation 3D. Ce projet démontre la maîtrise des outils de conception 3D au service d'une vision artistique originale.",
+    images: ["/3d.png"],
+    tableData: ["3D", "2023", "Blender", "", "Modélisation"],
   },
   {
     id: 5,
@@ -58,6 +78,8 @@ export const projects: Project[] = [
     image: "/manufacture.png",
     description:
       "Conception d'une affiche pour la Manufacture, alliant impact visuel et communication efficace. Le design joue avec la typographie et la composition pour créer une identité forte et mémorable.",
+    images: ["/manufacture.png"],
+    tableData: ["Affiche", "2023", "Manufacture", "", "Typographie"],
   },
   {
     id: 6,
@@ -68,6 +90,8 @@ export const projects: Project[] = [
     image: "/typographie.jpg",
     description:
       "Exploration et création typographique, développant un caractère unique qui allie lisibilité et expressivité. Ce projet démontre une compréhension approfondie des principes typographiques et leur application créative.",
+    images: ["/typographie.jpg"],
+    tableData: ["Typographie", "2023", "Specimen", "", "Création"],
   },
   {
     id: 7,
@@ -78,6 +102,8 @@ export const projects: Project[] = [
     image: "/edition.jpg",
     description:
       "Projet d'édition combinant contenu éditorial et design graphique. La mise en page, le choix des matériaux et la direction artistique s'unissent pour créer une expérience de lecture immersive.",
+    images: ["/edition.jpg"],
+    tableData: ["Édition", "2023", "", "Éditorial", "Mise en page"],
   },
   {
     id: 8,
@@ -88,6 +114,8 @@ export const projects: Project[] = [
     image: "/web.jpg",
     description:
       "Conception et développement d'une interface web moderne et responsive. Ce projet met l'accent sur l'expérience utilisateur tout en maintenant une esthétique soignée et contemporaine.",
+    images: ["/web.jpg"],
+    tableData: ["Web", "2023", "", "Interface", "UX/UI"],
   },
   {
     id: 9,
@@ -98,5 +126,7 @@ export const projects: Project[] = [
     image: "/workshop.jpg",
     description:
       "Conception d'un workshop interactive pour les artistes et designers. Le design met l'accent sur l'expérience utilisateur tout en maintenant une esthétique soignée et contemporaine.",
+    images: ["/workshop.jpg"],
+    tableData: ["Workshop", "2023", "Archives", "", "Formation"],
   },
 ];

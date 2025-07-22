@@ -22,7 +22,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <div className="min-h-screen bg-background text-foreground relative">
             <Header />
-            <main className="pt-8">{children}</main>
+            <main>{children}</main>
           </div>
         </body>
       </ThemeProvider>

@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
-import { Button } from "@repo/ui/components/ui/button";
-import Link from "next/link";
 import { projects } from "../projects";
+import ProjectHeader from "./components/project-header";
+import ProjectGallery from "./components/project-gallery";
 
 interface PageProps {
   params: Promise<{
@@ -20,22 +19,17 @@ export default async function ProjectPage({ params }: PageProps) {
   }
 
   return (
-    <div className="container py-12 mx-auto">
-      <Button asChild className="mb-6">
-        <Link href="/">Retour aux projets</Link>
-      </Button>
-      <article className="max-w-3xl mx-auto">
-        <Image
-          src={project.image}
-          alt={project.title}
-          width={800}
-          height={600}
-          className="w-full size-full object-cover rounded-lg mb-6"
-        />
-        <h1 className="text-3xl font-bold mb-2">{project.title}</h1>
-        <h2 className="text-muted-foreground mb-4">{project.subtitle}</h2>
-        <p className="text-lg leading-relaxed">{project.description}</p>
-      </article>
+    <div className="min-h-screen bg-background">
+      {/* Header avec tableau collé au header principal */}
+      <ProjectHeader 
+        tableData={project.tableData} 
+      />
+      
+      {/* Galerie d'images désordonnée */}
+      <ProjectGallery 
+        images={project.images} 
+        title={project.title} 
+      />
     </div>
   );
 }
