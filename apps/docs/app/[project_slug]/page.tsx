@@ -25,9 +25,9 @@ export default async function ProjectPage({ params }: PageProps) {
         tableData={project.tableData} 
       />
       
-      {/* Galerie d'images désordonnée */}
+      {/* Galerie d'images et vidéos désordonnée */}
       <ProjectGallery 
-        images={project.images} 
+        projectId={project.id} 
         title={project.title} 
       />
     </div>

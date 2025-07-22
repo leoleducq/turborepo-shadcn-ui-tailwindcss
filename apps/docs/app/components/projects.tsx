@@ -5,6 +5,7 @@ import { Card, CardContent } from "@repo/ui/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "../projects";
+import VideoPlayer from "../[project_slug]/components/video-player";
 
 // Trier les projets par date du plus récent au moins récent
 const sortedProjects = projects.sort(
@@ -36,14 +37,23 @@ export default function Projects() {
               >
                 <Card className="cursor-pointer overflow-hidden rounded-none border-none">
                   <CardContent className="p-0 relative overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={400}
-                      height={height}
-                      className="object-cover w-full transition-transform duration-300 ease-in-out"
-                      style={{ height: `${height}px` }}
-                    />
+                    {project.image.endsWith('.mp4') || project.image.endsWith('.mov') ? (
+                      <VideoPlayer
+                        src={project.image}
+                        className="w-full transition-transform duration-300 ease-in-out"
+                        style={{ height: `${height}px` }}
+                        preview={true}
+                      />
+                    ) : (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={400}
+                        height={height}
+                        className="object-cover w-full transition-transform duration-300 ease-in-out"
+                        style={{ height: `${height}px` }}
+                      />
+                    )}
 
                     {/* Overlay avec animation depuis le bas */}
                     <div className="absolute bottom-0 left-0 right-0 bg-white border-l-2 border-r-2 border-black p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
