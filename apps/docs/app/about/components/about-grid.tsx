@@ -12,8 +12,36 @@ const aboutData = [
 
 export default function AboutGrid() {
   return (
-    <div className="p-8">
-      <table className="border-collapse w-full text-black">
+    <div className="p-4 md:p-8">
+      {/* Mobile: Stack format */}
+      <div className="block md:hidden space-y-6">
+        {aboutData.map((row, index) => {
+          const [category, date, description] = row;
+          if (!category && !date && !description) return null;
+
+          return (
+            <div
+              key={index}
+              className="bg-white rounded-lg border border-gray-200 p-4 hover:bg-yellow-50 transition-colors"
+            >
+              {category && (
+                <div className="font-medium text-lg mb-2 text-black border-b border-gray-200 pb-2">
+                  {category}
+                </div>
+              )}
+              {date && (
+                <div className="text-gray-700 mb-2 font-medium">{date}</div>
+              )}
+              {description && (
+                <div className="text-gray-800">{description}</div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Desktop: Table format */}
+      <table className="hidden md:table border-collapse w-full text-black">
         <tbody>
           {aboutData.map((row, index) => (
             <tr key={index} className="hover:bg-yellow-50 transition-colors">

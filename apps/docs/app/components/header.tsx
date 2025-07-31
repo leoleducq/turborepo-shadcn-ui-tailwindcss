@@ -5,9 +5,12 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="w-full border-b bg-yellow-300">
-      <div className="container flex h-14 items-center justify-between">
-        <Link href="/" className="text-2xl font-light text-black">
+    <header
+      className="w-full border-b"
+      style={{ backgroundColor: "rgb(255, 243, 0)" }}
+    >
+      <div className="container flex h-10 items-center justify-between">
+        <Link href="/" className="text-xl font-light text-black">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
