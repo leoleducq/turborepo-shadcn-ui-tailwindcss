@@ -1,10 +1,10 @@
 import "@ui/styles/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Baloo_2 } from "next/font/google";
 import Header from "./components/header";
 import { ThemeProvider } from "./components/theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const baloo2 = Baloo_2({ subsets: ["latin"], weight: ["700"] });
 
 export const metadata: Metadata = {
   title: "Portfolio Léa Leducq",
@@ -17,9 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <body className={inter.className}>
+        <body className={baloo2.className}>
           <div className="min-h-screen bg-background text-foreground relative">
             <Header />
             <main>{children}</main>

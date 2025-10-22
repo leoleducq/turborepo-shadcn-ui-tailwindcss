@@ -12,7 +12,7 @@ export default function ProjectHeader({ tableData }: ProjectHeaderProps) {
           return (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-lg p-4 text-black shadow-sm"
+              className="border border-[rgb(255,0,0)] p-4"
             >
               {cell}
             </div>
@@ -21,15 +21,14 @@ export default function ProjectHeader({ tableData }: ProjectHeaderProps) {
       </div>
 
       {/* Desktop: Table format */}
-      <table className="hidden md:table border-collapse w-full text-black">
+      <table className="hidden w-full border border-[rgb(255,0,0)] border-collapse md:table">
         <tbody>
           <tr>
             {tableData.map((cell, index) => (
               <td
                 key={index}
                 className={`
-                  border border-black p-4 
-                  ${cell === '' ? 'bg-gray-50' : ''}
+                  border border-[rgb(255,0,0)] p-4 align-top
                 `}
               >
                 {cell}

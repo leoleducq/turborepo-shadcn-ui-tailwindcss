@@ -117,11 +117,12 @@ export default function VideoPlayer({
   };
 
   const progressPercent = duration > 0 ? (currentTime / duration) * 100 : 0;
+  const accentColor = "rgb(255, 0, 0)";
 
   return (
     <div
       className={cn(
-        "relative group bg-black overflow-hidden shadow-lg",
+        "relative group overflow-hidden border border-[rgb(255,0,0)] bg-white",
         className
       )}
       style={style}
@@ -132,7 +133,7 @@ export default function VideoPlayer({
         ref={videoRef}
         src={src}
         poster={poster}
-        className="w-full h-full object-cover"
+        className="h-full w-full object-cover"
         onClick={preview ? undefined : togglePlay}
         muted={preview}
         autoPlay={preview}
@@ -141,112 +142,70 @@ export default function VideoPlayer({
       />
 
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-          <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+        <div className="absolute inset-0 flex items-center justify-center bg-white">
+          <div className="h-8 w-8 animate-spin rounded-full border-2 border-[rgb(255,0,0)] border-t-white" />
         </div>
       )}
 
-      {/* Controls overlay - masqué en mode preview */}
       {!preview && (
         <div
           className={cn(
-            "absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transition-opacity duration-300",
-            showControls ? "opacity-100" : "opacity-0"
+            "absolute bottom-0 left-0 right-0 border-t border-[rgb(255,0,0)] bg-white p-4 transition-transform duration-300 ease-out",
+            showControls
+              ? "translate-y-0"
+              : "translate-y-full group-hover:translate-y-0 group-focus-within:translate-y-0"
           )}
         >
-        {/* Progress bar */}
-        <div
-          ref={progressRef}
-          className="w-full h-1 bg-white/30 rounded-full mb-3 cursor-pointer group/progress"
-          onClick={handleProgress}
-        >
           <div
-            className="h-full bg-white rounded-full transition-all duration-150 group-hover/progress:bg-blue-500"
-            style={{ width: `${progressPercent}%` }}
-          />
-        </div>
-
-        {/* Controls */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={togglePlay}
-            className="text-white hover:text-blue-400 transition-colors"
+            ref={progressRef}
+            className="mb-3 h-1 w-full cursor-pointer border border-[rgb(255,0,0)]"
+            onClick={handleProgress}
           >
-            {isPlaying ? (
-              <Pause className="w-5 h-5" />
-            ) : (
-              <Play className="w-5 h-5" />
-            )}
-          </button>
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={toggleMute}
-              className="text-white hover:text-blue-400 transition-colors"
-            >
-              {isMuted ? (
-                <VolumeX className="w-4 h-4" />
-              ) : (
-                <Volume2 className="w-4 h-4" />
-              )}
-            </button>
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.1"
-              value={isMuted ? 0 : volume}
-              onChange={handleVolumeChange}
-              className="w-16 h-1 bg-white/30 rounded-full appearance-none cursor-pointer slider"
+            <div
+              className="h-full bg-[rgb(255,0,0)] transition-all duration-150"
+              style={{ width: `${progressPercent}%` }}
             />
           </div>
 
-          <div className="text-white text-sm">
-            {formatTime(currentTime)} / {formatTime(duration)}
+          <div className="flex flex-wrap items-center gap-3 text-[rgb(255,0,0)]">
+            <button onClick={togglePlay} className="uppercase">
+              {isPlaying ? (
+                <Pause className="h-5 w-5" />
+              ) : (
+                <Play className="h-5 w-5" />
+              )}
+            </button>
+
+            <div className="flex items-center gap-2">
+              <button onClick={toggleMute} className="uppercase">
+                {isMuted ? (
+                  <VolumeX className="h-4 w-4" />
+                ) : (
+                  <Volume2 className="h-4 w-4" />
+                )}
+              </button>
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.1"
+                value={isMuted ? 0 : volume}
+                onChange={handleVolumeChange}
+                className="w-16"
+                style={{ accentColor }}
+              />
+            </div>
+
+            <div className="text-sm font-mono uppercase tracking-wide">
+              {formatTime(currentTime)} / {formatTime(duration)}
+            </div>
+
+            <button onClick={toggleFullscreen} className="uppercase">
+              <Maximize className="h-4 w-4" />
+            </button>
           </div>
-
-          <div className="flex-1" />
-
-          <button
-            onClick={toggleFullscreen}
-            className="text-white hover:text-blue-400 transition-colors"
-          >
-            <Maximize className="w-4 h-4" />
-          </button>
-        </div>
         </div>
       )}
-
-      {/* Play button overlay - masqué en mode preview */}
-      {!preview && !isPlaying && !isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <button
-            onClick={togglePlay}
-            className="w-16 h-16 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
-          >
-            <Play className="w-8 h-8 text-white ml-1" />
-          </button>
-        </div>
-      )}
-
-      <style jsx>{`
-        .slider::-webkit-slider-thumb {
-          appearance: none;
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          background: white;
-          cursor: pointer;
-        }
-        .slider::-moz-range-thumb {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          background: white;
-          cursor: pointer;
-          border: none;
-        }
-      `}</style>
     </div>
   );
 }
